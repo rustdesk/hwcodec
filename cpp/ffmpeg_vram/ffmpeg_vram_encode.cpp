@@ -496,7 +496,6 @@ int ffmpeg_vram_set_framerate(FFmpegVRamEncoder *encoder, int32_t framerate) {
 }
 
 int ffmpeg_vram_test_encode(void *outDescs, int32_t maxDescNum, int32_t *outDescNum, 
-                            const int64_t *luid_range, int32_t luid_range_count,
                             API api, DataFormat dataFormat,
                             int32_t width, int32_t height, int32_t kbs,
                             int32_t framerate, int32_t gop) {
@@ -511,8 +510,6 @@ int ffmpeg_vram_test_encode(void *outDescs, int32_t maxDescNum, int32_t *outDesc
         continue;
       for (auto &adapter : adapters.adapters_) {
         int64_t luid = LUID(adapter.get()->desc1_);
-        if (!util::luid_in_range(luid, luid_range, luid_range_count))
-          continue;
         FFmpegVRamEncoder *e = (FFmpegVRamEncoder *)ffmpeg_vram_new_encoder(
             (void *)adapter.get()->device_.Get(), luid,
             api, dataFormat, width, height, kbs, framerate, gop);

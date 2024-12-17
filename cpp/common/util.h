@@ -37,8 +37,6 @@ namespace util {
     inline int64_t elapsed_ms(std::chrono::steady_clock::time_point start) {
         return std::chrono::duration_cast<std::chrono::milliseconds>(now() - start).count();
     }
-
-    bool luid_in_range(int64_t luid, const int64_t *luid_range, int32_t luid_range_count);
 }
 
 

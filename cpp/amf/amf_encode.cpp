@@ -525,7 +525,6 @@ int amf_driver_support() {
 }
 
 int amf_test_encode(void *outDescs, int32_t maxDescNum, int32_t *outDescNum,
-                    const int64_t *luid_range, int32_t luid_range_count,
                     API api, DataFormat dataFormat, int32_t width,
                     int32_t height, int32_t kbs, int32_t framerate,
                     int32_t gop) {

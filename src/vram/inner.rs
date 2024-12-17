@@ -36,8 +36,6 @@ pub type TestEncodeCall = unsafe extern "C" fn(
     outDescs: *mut c_void,
     maxDescNum: i32,
     outDescNum: *mut i32,
-    luid_range: *const i64,
-    luid_range_count: i32,
     api: i32,
     dataFormat: i32,
     width: i32,
