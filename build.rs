@@ -156,7 +156,7 @@ mod ffmpeg {
         {
             let mut static_libs = vec!["avcodec", "avutil", "avformat"];
             if target_os == "windows" {
-                static_libs.push("libmfx");
+                static_libs.push("mfx");
             }
             static_libs
                 .iter()
